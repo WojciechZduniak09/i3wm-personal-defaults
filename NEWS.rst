@@ -10,6 +10,8 @@ v1.0.0
 (4) Added systemd package autoupdater.
 (5) Added custom *i3* and *i3blocks* configuration files and scripts.
 (6) Added *xinit* script which probably won't work but trust me bro.
+(7) Fixed *autoUpdate.timer* description syntax error.
+(8) Made *autoUpdate.timer* repeat every 30 minutes for real this time.
 
 Older news information
 """"""""""""""""""""""""""""""""""

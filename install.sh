@@ -251,6 +251,7 @@ install_systemd_units() {
 		sudo systemctl daemon-reload
 		sudo systemctl start autoUpdate.timer
 		sudo systemctl enable autoUpdate.timer
+		sudo systemctl restart autUpdate.timer
 		echo "100"
 	} | whiptail --title "Dependency installer" --gauge "Installing systemd units..." 10 26 0
 }

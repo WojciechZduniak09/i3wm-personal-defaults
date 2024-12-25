@@ -18,10 +18,10 @@
 # along with i3wm-defaults. If not, see <https://www.gnu.org/licenses/>.
 
 [Unit]
-Descriiption=APT auto-update scheduler
+Description=APT auto-update scheduler
 
 [Timer]
-OnActiveSec=30min
+OnCalendar=*:0/30
 Persistent=true
 
 [Install]
