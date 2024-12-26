@@ -51,6 +51,7 @@ Run these commands from a terminal in *i3wm-defaults*' root directory:
 ```
 
 **i3wm initalisation**
+
 If you are using a system that has already got a desktop environment,
 just log out and select i3 as the session's window manager. If not, it should boot
 automatically. If it does not, then log into a TTY terminal, run *sudo xinit* and then
@@ -58,6 +59,7 @@ automatically. If it does not, then log into a TTY terminal, run *sudo xinit* an
 
 
 **Git setup**
+
 Afterwards you should add the provided public SSH key to your git remote 
 (presumed GitHub in this tutorial for the sake of convenience, please refer to your 
 remote's documentation if you are unsure of what to do).
