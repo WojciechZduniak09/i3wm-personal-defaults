@@ -7,6 +7,7 @@ v1.1.0
 (1) Made *USERNAME* variable in *install.sh* declared separately from its definition.
 (2) Added *ssh-agent* notice for Git setup in *install.sh*.
 (3) Shortened *repack* command wait time from 5 seconds to 3 seconds for GPLv3 declaration to be both legible and not too long.
+(4) Redefined project purpose for it to be for all Debian systems.
 
 Older news information
 """"""""""""""""""""""""""""""""""
