@@ -38,7 +38,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with i3wm-defaults. If not, see <https://www.gnu.org/licenses/>.
 EOF
-sleep 5
+sleep 3
 
 sudo echo "Starting repack process..." # Done so that superuser requiuests don't show during the progress bar
 
