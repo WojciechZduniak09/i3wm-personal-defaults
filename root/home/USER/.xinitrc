@@ -1,4 +1,4 @@
-# i3wm-defaults, a set of files for Debian virtual machines used for the i3 window manager.
+# i3wm-defaults, a set of files for Debian systems which use the i3 window manager.
 #
 # Copyright (C) 2024 Wojciech Zduniak <githubinquiries.ladder140@passinbox.com>
 #
