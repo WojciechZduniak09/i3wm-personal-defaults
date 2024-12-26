@@ -50,26 +50,24 @@ Run these commands from a terminal in *i3wm-defaults*' root directory:
     ./install.sh
 ```
 
+**i3wm initalisation**
+If you are using a system that has already got a desktop environment,
+just log out and select i3 as the session's window manager. If not, it should boot
+automatically. If it does not, then log into a TTY terminal, run *sudo xinit* and then
+*sudo i3*. Remember to **not install the configuation file**.
+
+
+**Git setup**
 Afterwards you should add the provided public SSH key to your git remote 
 (presumed GitHub in this tutorial for the sake of convenience, please refer to your 
 remote's documentation if you are unsure of what to do).
 
 Later, you should add this to any of the repositories you want to connect to GitHub:
-
-
-**If a remote has already been set earlier**
-```
-    git remote set-url REMOTE_NAME git@github:GITHUB_USERNAME/REPOSITORY_NAME.git
-```
-
-
-**If no remote has yet been set**
-```
-    git remote add MAKE_UP_A_REMOTE_NAME git@github:GITHUB_USERNAME/REPOSITORY_NAME.git
-```
-
+    * If a remote has already been set earlier
+        * ```git remote set-url REMOTE_NAME git@github:GITHUB_USERNAME/REPOSITORY_NAME.git```
+    * If a remote has not yet been set
+        * ```git remote add MAKE_UP_A_REMOTE_NAME git@github:GITHUB_USERNAME/REPOSITORY_NAME.git```
 
 ## Contributors and methods of contact ##
-
 
 * Wojciech Zduniak. Contact via email at *githubinquiries.ladder140@passinbox.com*

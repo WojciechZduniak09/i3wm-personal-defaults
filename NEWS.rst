@@ -8,6 +8,7 @@ v1.1.0
 (2) Added *ssh-agent* notice for Git setup in *install.sh*.
 (3) Shortened *repack* command wait time from 5 seconds to 3 seconds for GPLv3 declaration to be both legible and not too long.
 (4) Redefined project purpose for it to be for all Debian systems.
+(5) Added more explanations on how to install *i3wm-defaults*.
 
 Older news information
 """"""""""""""""""""""""""""""""""
