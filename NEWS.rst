@@ -1,17 +1,11 @@
 i3wm-defaults development news
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-v1.0.0
+v1.1.0
 """"""""""
 
-(1) Added auto-setup file.
-(2) Added *README.md* along wiht *NEWS.rst* and *ONEWS.rst*.
-(3) Added GPL3 license to project.
-(4) Added systemd package autoupdater.
-(5) Added custom *i3* and *i3blocks* configuration files and scripts.
-(6) Added *xinit* script which probably won't work but trust me bro.
-(7) Fixed *autoUpdate.timer* description syntax error.
-(8) Made *autoUpdate.timer* repeat every 30 minutes for real this time.
+(1) Made *USERNAME* variable in *install.sh* declared separately from its definition.
+(2) Added *ssh-agent* notice for Git setup in *install.sh*.
 
 Older news information
 """"""""""""""""""""""""""""""""""

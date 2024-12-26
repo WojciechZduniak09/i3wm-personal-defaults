@@ -129,6 +129,7 @@ install_dev_dependencies() {
 		
 		whiptail --title "Git setup" --msgbox "In order for git to finish setting up, add this public key to github: $(cat "$GIT_SSH_PATH.pub")" 30 50
 		whiptail --title "Git setup" --msgbox "In order for git to finish setting up, set a repo's remote as git@github.com:$GIT_USERNAME/REPOSITORY.git" 30 50
+		whiptail --title "Git setup" --msgbox "Note that you may need to run \"ssh-add $GIT_SSH_PATH\" at startup of your system" 30 50
 		echo "100"
 } | whiptail --title "Git setup" --gauge "Setting up git SSH..." 10 26 0
 }
@@ -147,7 +148,8 @@ install_i3_dependencies() {
 		sudo cp root/etc/i3blocks.conf /etc/i3blocks.conf
 		sudo cp root/usr/share/i3blocks/volume /usr/share/i3blocks/volume
 		cp root/home/USER/.config/i3/config "$HOME"/.config/i3/config
-		local USERNAME=$(whoami)
+		local USERNAME
+		USERNAME=$(whoami)
 		sed -i "s/set \$USERNAME USERNAME/set \$USERNAME $USERNAME/g" "$HOME"/.config/i3/config
 		i3-msg "restart" 2> /dev/null 1> /dev/null
 		echo "100"
