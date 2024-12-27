@@ -17,6 +17,8 @@ v1.3.0
 (11) Added *ltrace* and  *strace* to the reverse engineering installation.
 (12) Removed redundant *vscode --version* in dev installation.
 (13) Added *unzip* to the apt installation in the *Ghidra* download as it is not a default, preinstalled, package on Debian.
+(14) Added *xterm* to i3 installation.
+
 Older news information
 """"""""""""""""""""""""""""""""""
 
