@@ -190,7 +190,7 @@ install_reverse_engineering_packages() {
 			sudo rm -rf jdk-23_linux-x64_bin.deb
 		fi
 		echo "56"
-		if stat "$HOME"/Programs/ghidra_11.2.1_PUBLIC; then
+		if stat "$HOME"/Programs/ghidra_11.2.1_PUBLIC 2> /dev/null; then
 			echo 100
 			return
 		fi
