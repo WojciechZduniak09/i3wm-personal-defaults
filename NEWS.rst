@@ -5,6 +5,7 @@ v1.3.0
 """"""""""
 
 (1) Added *1> /dev/null* in the Java check.
+(2) Changed *2> /dev/null* location.
 
 Older news information
 """"""""""""""""""""""""""""""""""
