@@ -12,6 +12,7 @@ v1.3.0
 (6) Added a reminder at the end of *install.sh* to reboot the system.
 (7) Made *SIGNINT* possible in installer.
 (8) Added *Ghidra* installation verifier.
+(9) Fixed *VSCode* installation.
 
 Older news information
 """"""""""""""""""""""""""""""""""

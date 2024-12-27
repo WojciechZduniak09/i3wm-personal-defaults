@@ -61,7 +61,7 @@ install_dev_dependencies() {
 		echo "32"
 		if ! code --version 1> /dev/null 2> /dev/null; then
 			local VSCODE_EXPECTED_CHECKSUM="fbc5026ea43b81e08f1526bd6a75629cad6dec6111049f967aa45a9e36737749"
-			if ! "$(wget -q https://code.visualstudio.com/sha/download?build=stable\&os=linux-deb-x64)" && code --version; then
+			if ! wget -q -O https://code.visualstudio.com/sha/download?build=stable\&os=linux-deb-x64 && code --version; then
 				echo "wget error or vscode is already installed"
 				exit 1
 			fi
@@ -81,7 +81,7 @@ install_dev_dependencies() {
 			sudo dpkg -i vscode.deb 2> /dev/null 1> /dev/null
 			echo "80"
 			
-			rm rf vscode.deb
+			rm -rf vscode.deb
 		fi
 		echo "100"
 	} | whiptail --title "Dependency installer" --gauge "Installing dev dependencies..." 10 26 0
@@ -339,7 +339,7 @@ if whiptail --title "Dependency installer" --yesno "Are you sure you want to ins
 	install_i3_dependencies
 	install_bash_aliases
 	echo "Done!"
-	echo "Restart your system to apply the changes"
+	echo "Restart your system to apply the changes."
 else
 	echo "Installation aborted!"
 	exit 0
