@@ -15,6 +15,7 @@ v1.3.0
 (9) Fixed *VSCode* installation.
 (10) Added *unzip* verification for *Ghidra*.
 (11) Added *ltrace* and  *strace* to the reverse engineering installation.
+(12) Removed redundant *vscode --version* in dev installation.
 
 Older news information
 """"""""""""""""""""""""""""""""""
