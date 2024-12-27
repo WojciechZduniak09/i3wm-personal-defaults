@@ -22,6 +22,13 @@ v1.1.0
 (4) Redefined project purpose for it to be for all Debian systems.
 (5) Added more explanations on how to install *i3wm-defaults*.
 
+v1.2.0
+""""""""""
+
+(1) Made *firefox* command not show errors.
+(2) Made *gpg* install before it's use in the firefox installation.
+(3) Added *2> /dev/null* in the Java check.
+
 Legal and copying statement
 """"""""""""""""""""""""""""""""""""""""""
 

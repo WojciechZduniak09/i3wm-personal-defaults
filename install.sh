@@ -161,7 +161,7 @@ install_reverse_engineering_packages() {
 	{
 		sudo apt update 2> /dev/null
 		echo "14"
-		if ! java --version | grep -q -e "java 23" -e "java 22" -e "java 21" 2> /dev/null; then
+		if ! java --version | grep -q -e "java 23" -e "java 22" -e "java 21" 2> /dev/null 1> /dev/null; then
 			# Java is required for Ghidra
 			if ! wget -q https://download.oracle.com/java/23/latest/jdk-23_linux-x64_bin.deb; then
 				echo "wget error!"

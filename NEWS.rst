@@ -1,12 +1,10 @@
 i3wm-defaults development news
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-v1.2.0
+v1.3.0
 """"""""""
 
-(1) Made *firefox* command not show errors.
-(2) Made *gpg* install before it's use in the firefox installation.
-(3) Added *2> /dev/null* in the Java check.
+(1) Added *1> /dev/null* in the Java check.
 
 Older news information
 """"""""""""""""""""""""""""""""""
