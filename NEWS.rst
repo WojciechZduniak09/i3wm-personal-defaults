@@ -13,6 +13,8 @@ v1.3.0
 (7) Made *SIGNINT* possible in installer.
 (8) Added *Ghidra* installation verifier.
 (9) Fixed *VSCode* installation.
+(10) Added *unzip* verification for *Ghidra*.
+(11) Added *ltrace* and  *strace* to the reverse engineering installation.
 
 Older news information
 """"""""""""""""""""""""""""""""""

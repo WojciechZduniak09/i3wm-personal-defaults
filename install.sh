@@ -161,6 +161,7 @@ install_i3_dependencies() {
 install_reverse_engineering_packages() {
 	{
 		sudo apt update 2> /dev/null
+		sudo apt install ltrace strace -y 2> /dev/null
 		echo "14"
 		if ! java --version  2> /dev/null | grep -q -e "java 23" -e "java 22" -e "java 21"; then
 			# Java is required for Ghidra
@@ -203,7 +204,10 @@ install_reverse_engineering_packages() {
 		fi
 		echo "70"
 
-		unzip "$GHIDRA_ZIP_PATH"
+		if ! unzip "$GHIDRA_ZIP_PATH"; then
+			echo "unzip failure"
+			exit 1
+		fi
 		rm -rf "$GHIDRA_ZIP_PATH"
 		echo "100"
 	} | whiptail --title "Dependency installer" --gauge "Installing reverse engineering dependencies..." 10 26 0
