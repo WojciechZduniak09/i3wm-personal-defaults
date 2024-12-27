@@ -145,7 +145,7 @@ install_i3_dependencies() {
 			sudo apt install xinit -y 2> /dev/null
 			sudo cp root/home/USER/.xinitrc "$HOME"/.xinitrc
 		fi
-		sudo apt install alacritty htop i3 neofetch feh i3blocks picom pulseaudio fonts-roboto -y 2> /dev/null
+		sudo apt install xinit xterm alacritty htop i3 neofetch feh i3blocks picom pulseaudio fonts-roboto -y 2> /dev/null
 		sudo cp root/etc/i3blocks.conf /etc/i3blocks.conf
 		sudo cp root/usr/share/i3blocks/volume /usr/share/i3blocks/volume
 		cp root/home/USER/.config/i3/config "$HOME"/.config/i3/config
