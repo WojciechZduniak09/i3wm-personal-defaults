@@ -17,4 +17,14 @@
 # You should have received a copy of the GNU General Public License
 # along with i3wm-defaults. If not, see <https://www.gnu.org/licenses/>.
 
-exec i3
+[Unit]
+Description=i3 auto-initiator at system startup
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/share/i3/i3init
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

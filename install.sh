@@ -41,6 +41,7 @@ EOF
 
 read -r -p "Press enter to continue . . . "
 
+trap "exit 1" SIGINT
 
 while true; do
 	if sudo echo "Root access granted to installer."; then
@@ -189,7 +190,10 @@ install_reverse_engineering_packages() {
 			sudo rm -rf jdk-23_linux-x64_bin.deb
 		fi
 		echo "56"
-		
+		if stat "$HOME"/Programs/ghidra_11.2.1_PUBLIC; then
+			echo 100
+			return
+		fi
 		rm -rf "$HOME"/Programs/ghidra_11.2.1_PUBLIC
 		local GHIDRA_ZIP_PATH
 		GHIDRA_ZIP_PATH="$HOME/Programs/ghidra_11.2.1_PUBLIC_20241105.zip"
@@ -201,10 +205,6 @@ install_reverse_engineering_packages() {
 
 		unzip "$GHIDRA_ZIP_PATH"
 		rm -rf "$GHIDRA_ZIP_PATH"
-
-		cp root/home/USER/.bash_aliases "$HOME"/.bash_aliases
-		# shellcheck source=/dev/null
-		source "$HOME/.bashrc"
 		echo "100"
 	} | whiptail --title "Dependency installer" --gauge "Installing reverse engineering dependencies..." 10 26 0
 }
@@ -249,7 +249,14 @@ install_systemd_units() {
 		sudo rm -rf /etc/systemd/system/autoUpdate.service /etc/systemd/system/autoUpdate.timer
 		sudo cp root/etc/systemd/system/autoUpdate.service /etc/systemd/system/autoUpdate.service
 		sudo chmod 0744 /etc/systemd/system/autoUpdate.service
-		echo "50"
+		echo "33"
+
+		sudo systemctl stop i3init.service 2> /dev/null 1> /dev/null
+		sudo rm -rf /etc/systemd/system/i3init.service
+		sudo cp root/etc/systemd/system/i3init.service /etc/systemd/system/i3init.service
+		sudo chmod 0744 /etc/systemd/system/i3init.service
+		sudo systemctl enable /etc/systemd/system/i3init.service
+		echo "66"
 
 		sudo cp root/etc/systemd/system/autoUpdate.timer /etc/systemd/system/autoUpdate.timer
 		sudo chmod 0744 /etc/systemd/system/autoUpdate.timer
@@ -268,6 +275,17 @@ install_repack_command() {
 		sudo chmod 0755 /usr/bin/repack
 		echo "100"
 	} | whiptail --title "Dependency installer" --gauge "Installing quality-of-life commands..." 10 26 0
+}
+
+
+install_bash_aliases() {
+	{
+		cp root/home/USER/.bash_aliases "$HOME"/.bash_aliases
+		echo "50"
+		#shellcheck source=/dev/null
+		source "$HOME/.bashrc"
+		echo "100"
+	} | whiptail --title "Dependency installer" --gauge "Installing .bash_aliases..." 10 26 0
 }
 
 
@@ -319,7 +337,9 @@ if whiptail --title "Dependency installer" --yesno "Are you sure you want to ins
 	install_systemd_units
 	install_dev_dependencies
 	install_i3_dependencies
+	install_bash_aliases
 	echo "Done!"
+	echo "Restart your system to apply the changes"
 else
 	echo "Installation aborted!"
 	exit 0

@@ -8,6 +8,10 @@ v1.3.0
 (2) Added *1> /dev/null 2> /dev/null* to VSCode version check.
 (3) Made Git installation an option.
 (4) Made *i3 config* file and respective directories be created if they don't exist prior to installation.
+(5) Made *i3init* systemd unit with a shared script to replace xinit and it's installation function.
+(6) Added a reminder at the end of *install.sh* to reboot the system.
+(7) Made *SIGNINT* possible in installer.
+(8) Added *Ghidra* installation verifier.
 
 Older news information
 """"""""""""""""""""""""""""""""""
