@@ -16,7 +16,7 @@ v1.3.0
 (10) Added *unzip* verification for *Ghidra*.
 (11) Added *ltrace* and  *strace* to the reverse engineering installation.
 (12) Removed redundant *vscode --version* in dev installation.
-
+(13) Added *unzip* to the apt installation in the *Ghidra* download as it is not a default, preinstalled, package on Debian.
 Older news information
 """"""""""""""""""""""""""""""""""
 

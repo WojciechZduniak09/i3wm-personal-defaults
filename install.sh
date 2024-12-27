@@ -195,7 +195,7 @@ install_reverse_engineering_packages() {
 			echo 100
 			return
 		fi
-		sudo apt install zip unzip -y
+		sudo apt install unzip -y
 		rm -rf "$HOME"/Programs/ghidra_11.2.1_PUBLIC
 		local GHIDRA_ZIP_PATH
 		GHIDRA_ZIP_PATH="$HOME/Programs/ghidra_11.2.1_PUBLIC_20241105.zip"
