@@ -6,6 +6,7 @@ v1.3.0
 
 (1) Added *1> /dev/null* in the Java check.
 (2) Changed *2> /dev/null* location.
+(3) Added *1> /dev/null 2> /dev/nul* to VSCode version check.
 
 Older news information
 """"""""""""""""""""""""""""""""""
