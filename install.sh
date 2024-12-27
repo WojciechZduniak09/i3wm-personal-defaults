@@ -85,7 +85,7 @@ install_dev_dependencies() {
 		echo "100"
 	} | whiptail --title "Dependency installer" --gauge "Installing dev dependencies..." 10 26 0
 	
-	if git --version; then
+	if ! whiptail --title "Git setup" --yesno "Set up Git?" 7 20; then
 		return
 	fi
 
@@ -308,6 +308,9 @@ install_virtualbox() {
 
 if whiptail --title "Dependency installer" --yesno "Are you sure you want to install and set up all dependencies?" --yes-button "Install" --no-button "Abort" 9 26; then
 	cd "$HOME"/Programs || exit 1
+	mkdir "$HOME"/.config 2> /dev/null
+	mkdir "$HOME"/.config/i3 2> /dev/null
+	touch "$HOME"/.config/i3/config 2> /dev/null
 	install_firefox
 	install_virtualbox
 	install_reverse_engineering_packages
