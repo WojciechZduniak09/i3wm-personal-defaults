@@ -161,7 +161,7 @@ install_reverse_engineering_packages() {
 	{
 		sudo apt update 2> /dev/null
 		echo "14"
-		if ! java --version | grep -q -e "java 23" -e "java 22" -e "java 21" ; then
+		if ! java --version | grep -q -e "java 23" -e "java 22" -e "java 21" 2> /dev/null; then
 			# Java is required for Ghidra
 			if ! wget -q https://download.oracle.com/java/23/latest/jdk-23_linux-x64_bin.deb; then
 				echo "wget error!"
@@ -211,12 +211,15 @@ install_reverse_engineering_packages() {
 
 
 install_firefox() {
-	if firefox --version; then
+	if firefox --version 2> /dev/null; then
 		return
 	fi
 
 	sudo rm -rf /etc/apt/sources.list.d/mozilla.list
 	sudo install -d -m 0755 /etc/apt/keyrings
+
+	sudo apt update
+	sudo apt install gpg -y
 
 	wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null
 

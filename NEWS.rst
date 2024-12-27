@@ -1,20 +1,17 @@
 i3wm-defaults development news
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-v1.1.0
+v1.2.0
 """"""""""
 
-(1) Made *USERNAME* variable in *install.sh* declared separately from its definition.
-(2) Added *ssh-agent* notice for Git setup in *install.sh*.
-(3) Shortened *repack* command wait time from 5 seconds to 3 seconds for GPLv3 declaration to be both legible and not too long.
-(4) Redefined project purpose for it to be for all Debian systems.
-(5) Added more explanations on how to install *i3wm-defaults*.
+(1) Made *firefox* command not show errors.
+(2) Made *gpg* install before it's use in the firefox installation.
+(3) Added *2> /dev/null* in the Java check.
 
 Older news information
 """"""""""""""""""""""""""""""""""
 
 In order to find older, archived, news, please refer to *ONEWS.rst*.
-
 
 Legal and copying statement
 """"""""""""""""""""""""""""""""""""""""""
