@@ -4,11 +4,10 @@ i3wm-defaults development news
 v1.3.0
 """"""""""
 
-(1) Added *1> /dev/null* in the Java check.
-(2) Changed *2> /dev/null* location.
-(3) Added *1> /dev/null 2> /dev/nul* to VSCode version check.
-(4) Made Git installation an option.
-(5) Made *i3 config* file and respective directories be created if they don't exist prior to installation.
+(1) Changed *2> /dev/null* location.
+(2) Added *1> /dev/null 2> /dev/null* to VSCode version check.
+(3) Made Git installation an option.
+(4) Made *i3 config* file and respective directories be created if they don't exist prior to installation.
 
 Older news information
 """"""""""""""""""""""""""""""""""
