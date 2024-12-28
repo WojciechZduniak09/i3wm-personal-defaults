@@ -148,6 +148,9 @@ install_i3_dependencies() {
 		sudo apt install xinit xterm alacritty htop i3 neofetch feh i3blocks picom pulseaudio fonts-roboto -y 2> /dev/null
 		sudo cp root/etc/i3blocks.conf /etc/i3blocks.conf
 		sudo cp root/usr/share/i3blocks/volume /usr/share/i3blocks/volume
+		sudo mkdir /usr/share 2> /dev/null
+		sudo mkdir /usr/share/i3 2> /dev/null
+		sudo cp root/usr/share/i3/i3init /usr/share/i3/i3init
 		cp root/home/USER/.config/i3/config "$HOME"/.config/i3/config
 		local USERNAME
 		USERNAME=$(whoami)
@@ -163,7 +166,9 @@ install_reverse_engineering_packages() {
 		sudo apt update 2> /dev/null
 		sudo apt install ltrace strace -y 2> /dev/null
 		echo "14"
-		if ! java --version  2> /dev/null | grep -q -e "java 23" -e "java 22" -e "java 21"; then
+		if java --version  2> /dev/null | grep -q -e "java 23" -e "java 22" -e "java 21"; then
+			echo "56"
+		else
 			# Java is required for Ghidra
 			if ! wget -q https://download.oracle.com/java/23/latest/jdk-23_linux-x64_bin.deb; then
 				echo "wget error!"
@@ -189,8 +194,8 @@ install_reverse_engineering_packages() {
 				exit 1
 			fi
 			sudo rm -rf jdk-23_linux-x64_bin.deb
+			echo "56"
 		fi
-		echo "56"
 		if stat "$HOME"/Programs/ghidra_11.2.1_PUBLIC 2> /dev/null; then
 			echo 100
 			return
