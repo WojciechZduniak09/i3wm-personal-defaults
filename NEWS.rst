@@ -1,24 +1,12 @@
 i3wm-defaults development news
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-v1.3.0
+v1.3.1
 """"""""""
 
-(1) Changed *2> /dev/null* location.
-(2) Added *1> /dev/null 2> /dev/null* to VSCode version check.
-(3) Made Git installation an option.
-(4) Made *i3 config* file and respective directories be created if they don't exist prior to installation.
-(5) Made *i3init* systemd unit with a shared script to replace xinit and it's installation function.
-(6) Added a reminder at the end of *install.sh* to reboot the system.
-(7) Made *SIGNINT* possible in installer.
-(8) Added *Ghidra* installation verifier.
-(9) Fixed *VSCode* installation.
-(10) Added *unzip* verification for *Ghidra*.
-(11) Added *ltrace* and  *strace* to the reverse engineering installation.
-(12) Removed redundant *vscode --version* in dev installation.
-(13) Added *unzip* to the apt installation in the *Ghidra* download as it is not a default, preinstalled, package on Debian.
-(14) Added *xterm* to i3 installation.
-(15) Fixed Java installation.
+(1) Made a desktop environment's prior installation required (installations fail if not for some reason).
+(2) Made *i3blocks network interface* be adaptable.
+(3) Removed *i3init* systemd unit and it's executable.
 
 Older news information
 """"""""""""""""""""""""""""""""""

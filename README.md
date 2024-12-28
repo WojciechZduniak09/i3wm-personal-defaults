@@ -43,6 +43,11 @@ use it's handy *install.sh* script. If anything goes wrong, please
 feel free to contact a contributor (only me for now) for help or
 run the commands from the installation script manually.
 
+Remember that a desktop environment **must** be installed before running any scripts to avoid potential
+errors.
+
+Feel free to change any of the configuration files beforehand
+
 Run these commands from a terminal in *i3wm-defaults*' root directory:
 
 ```

@@ -145,12 +145,13 @@ install_i3_dependencies() {
 			sudo apt install xinit -y 2> /dev/null
 			sudo cp root/home/USER/.xinitrc "$HOME"/.xinitrc
 		fi
+		local INTERFACE
+		INTERFACE=ip addr shopw | grep "2:" | sed "s/2: //g" | cut -d : -f1
 		sudo apt install xinit xterm alacritty htop i3 neofetch feh i3blocks picom pulseaudio fonts-roboto -y 2> /dev/null
 		sudo cp root/etc/i3blocks.conf /etc/i3blocks.conf
+		sudo sed -i "s/INTERFACE/$INTERFACE/g" /etc/i3blocks.conf
 		sudo cp root/usr/share/i3blocks/volume /usr/share/i3blocks/volume
 		sudo mkdir /usr/share 2> /dev/null
-		sudo mkdir /usr/share/i3 2> /dev/null
-		sudo cp root/usr/share/i3/i3init /usr/share/i3/i3init
 		cp root/home/USER/.config/i3/config "$HOME"/.config/i3/config
 		local USERNAME
 		USERNAME=$(whoami)
@@ -259,14 +260,8 @@ install_systemd_units() {
 		sudo rm -rf /etc/systemd/system/autoUpdate.service /etc/systemd/system/autoUpdate.timer
 		sudo cp root/etc/systemd/system/autoUpdate.service /etc/systemd/system/autoUpdate.service
 		sudo chmod 0744 /etc/systemd/system/autoUpdate.service
-		echo "33"
+		echo "50"
 
-		sudo systemctl stop i3init.service 2> /dev/null 1> /dev/null
-		sudo rm -rf /etc/systemd/system/i3init.service
-		sudo cp root/etc/systemd/system/i3init.service /etc/systemd/system/i3init.service
-		sudo chmod 0744 /etc/systemd/system/i3init.service
-		sudo systemctl enable /etc/systemd/system/i3init.service
-		echo "66"
 
 		sudo cp root/etc/systemd/system/autoUpdate.timer /etc/systemd/system/autoUpdate.timer
 		sudo chmod 0744 /etc/systemd/system/autoUpdate.timer
