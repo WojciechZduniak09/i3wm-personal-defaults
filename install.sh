@@ -55,34 +55,9 @@ mkdir "$HOME"/Programs 2> /dev/null
 install_dev_dependencies() {
 	{
 		sudo apt update 2> /dev/null
-		echo "16"
+		echo "50"
 		
 		sudo apt install shellcheck vim git gcc g++ make valgrind gdb openssl -y 2> /dev/null
-		echo "32"
-		if ! code --version 1> /dev/null 2> /dev/null; then
-			local VSCODE_EXPECTED_CHECKSUM="ff58dfdb0e5674d8e42e1f3907be75a36587b1ca45e586ac06353e97869474e7"
-			if ! wget -q -O vscode.deb https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64; then
-				echo "wget error"
-				exit 1
-			fi
-			echo "48"
-			
-			local VSCODE_OBTAINED_CHECKSUM
-			VSCODE_OBTAINED_CHECKSUM=$(sha256sum vscode.deb | sed "s/ .*//g")
-			if ! sha256sum vscode.deb; then
-				echo "sha256sum error"
-				exit 1
-			elif [ "$VSCODE_EXPECTED_CHECKSUM" != "$VSCODE_OBTAINED_CHECKSUM" ]; then
-				echo "checksums don't match"
-				exit 1
-			fi
-			echo "64"
-			
-			sudo dpkg -i vscode.deb 2> /dev/null 1> /dev/null
-			echo "80"
-			
-			rm -rf vscode.deb
-		fi
 		echo "100"
 	} | whiptail --title "Dependency installer" --gauge "Installing dev dependencies..." 10 26 0
 	

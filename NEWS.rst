@@ -1,10 +1,10 @@
 i3wm-defaults development news
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-v1.3.2
+v1.4
 """"""""""
 
-(1) Fixed *i3blocks.conf* setup.
+(1) Replaced *vscode* (it's impossible to install automatically) with *VIM*.
 
 Older news information
 """"""""""""""""""""""""""""""""""

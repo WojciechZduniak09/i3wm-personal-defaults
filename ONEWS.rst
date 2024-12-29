@@ -55,6 +55,11 @@ v1.3.1
 (2) Made *i3blocks network interface* be adaptable.
 (3) Removed *i3init* systemd unit and it's executable.
 
+v1.3.2
+""""""""""
+
+(1) Fixed *i3blocks.conf* setup.
+
 Legal and copying statement
 """"""""""""""""""""""""""""""""""""""""""
 

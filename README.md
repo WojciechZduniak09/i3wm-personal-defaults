@@ -34,7 +34,7 @@ along with i3wm-defaults. If not, see <https://www.gnu.org/licenses/>.
 quality-of-life improvements to the i3 window manager on Debian
 Linux virtual machines. It's target audience is *supposed to be*
 developers and reverse engineers who want an **easy-to-configure**
-and **lightweight** Linux system.
+and **maybe lightweight** Linux system.
 
 ## Installation ##
 
