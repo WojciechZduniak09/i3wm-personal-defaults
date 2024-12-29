@@ -61,7 +61,7 @@ install_dev_dependencies() {
 		echo "32"
 		if ! code --version 1> /dev/null 2> /dev/null; then
 			local VSCODE_EXPECTED_CHECKSUM="ff58dfdb0e5674d8e42e1f3907be75a36587b1ca45e586ac06353e97869474e7"
-			if ! wget -q -O vscode.deb https://code.visualstudio.com/docs/?dv=linux64_deb; then
+			if ! wget -q -O vscode.deb https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64; then
 				echo "wget error"
 				exit 1
 			fi
