@@ -146,7 +146,7 @@ install_i3_dependencies() {
 			sudo cp root/home/USER/.xinitrc "$HOME"/.xinitrc
 		fi
 		local INTERFACE
-		INTERFACE=ip addr shopw | grep "2:" | sed "s/2: //g" | cut -d : -f1
+		INTERFACE=$(ip addr show | grep "2:" | sed "s/2: //g" | cut -d : -f1 | head -n 1)
 		sudo apt install xinit xterm alacritty htop i3 neofetch feh i3blocks picom pulseaudio fonts-roboto -y 2> /dev/null
 		sudo cp root/etc/i3blocks.conf /etc/i3blocks.conf
 		sudo sed -i "s/INTERFACE/$INTERFACE/g" /etc/i3blocks.conf
