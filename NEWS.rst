@@ -1,12 +1,10 @@
 i3wm-defaults development news
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-v1.3.1
+v1.3.2
 """"""""""
 
-(1) Made a desktop environment's prior installation required (installations fail if not for some reason).
-(2) Made *i3blocks network interface* be adaptable.
-(3) Removed *i3init* systemd unit and it's executable.
+(1) Fixed *i3blocks.conf* setup.
 
 Older news information
 """"""""""""""""""""""""""""""""""

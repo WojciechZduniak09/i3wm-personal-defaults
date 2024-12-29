@@ -48,6 +48,13 @@ v1.3.0
 (14) Added *xterm* to i3 installation.
 (15) Fixed Java installation.
 
+v1.3.1
+""""""""""
+
+(1) Made a desktop environment's prior installation required (installations fail if not for some reason).
+(2) Made *i3blocks network interface* be adaptable.
+(3) Removed *i3init* systemd unit and it's executable.
+
 Legal and copying statement
 """"""""""""""""""""""""""""""""""""""""""
 
