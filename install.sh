@@ -2,7 +2,7 @@
 
 # i3wm-defaults, a set of files for Debian systems which use the i3 window manager.
 #
-# Copyright (C) 2024 Wojciech Zduniak <githubinquiries.ladder140@passinbox.com>
+# Copyright (C) 2024, 2025 Wojciech Zduniak <githubinquiries.ladder140@passinbox.com>
 #
 # This file is part of i3wm-defaults
 #
@@ -22,7 +22,7 @@
 cat <<EOF >&1
 i3wm-defaults, a set of files for Debian systems which use the i3 window manager.
 
-Copyright (C) 2024 Wojciech Zduniak <githubinquiries.ladder140@passinbox.com>
+Copyright (C) 2024, 2025 Wojciech Zduniak <githubinquiries.ladder140@passinbox.com>
 
 This file is part of i3wm-defaults
 
@@ -138,6 +138,7 @@ install_i3_dependencies() {
 
 
 install_reverse_engineering_packages() {
+	sudo apt install wireshark tcpdump -y 2> /dev/null
 	{
 		sudo apt update 2> /dev/null
 		sudo apt install ltrace strace -y 2> /dev/null
@@ -179,8 +180,8 @@ install_reverse_engineering_packages() {
 		sudo apt install unzip -y 2> /dev/null
 		rm -rf "$HOME"/Programs/ghidra_11.2.1_PUBLIC
 		local GHIDRA_ZIP_PATH
-		GHIDRA_ZIP_PATH="$HOME/Programs/ghidra_11.2.1_PUBLIC_20241105.zip"
-		if ! wget -q https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_11.2.1_build/ghidra_11.2.1_PUBLIC_20241105.zip; then
+		GHIDRA_ZIP_PATH="$HOME/Programs/ghidra_11.2.1_PUBLIC_2024, 2025, 20251105.zip"
+		if ! wget -q https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_11.2.1_build/ghidra_11.2.1_PUBLIC_2024, 2025, 20251105.zip; then
 			echo "wget error"
 			exit 1
 		fi
@@ -319,7 +320,7 @@ if whiptail --title "Dependency installer" --yesno "Are you sure you want to ins
 	install_i3_dependencies
 	install_bash_aliases
 	echo "Done!"
-	echo "Restart your system to apply the changes."
+	echo "Log in again with i3 to use all of the changes."
 else
 	echo "Installation aborted!"
 	exit 0

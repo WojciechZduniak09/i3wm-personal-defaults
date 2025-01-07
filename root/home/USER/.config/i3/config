@@ -1,6 +1,6 @@
 # i3wm-defaults, a set of files for Debian systems which use the i3 window manager.
 #
-# Copyright (C) 2024 Wojciech Zduniak <githubinquiries.ladder140@passinbox.com>
+# Copyright (C) 2024, 2025 Wojciech Zduniak <githubinquiries.ladder140@passinbox.com>
 #
 # This file is part of i3wm-defaults
 #
@@ -17,9 +17,9 @@
 # You should have received a copy of the GNU General Public License
 # along with i3wm-defaults. If not, see <https://www.gnu.org/licenses/>.
 
-#######################
+##########################
 # STANDARD MOD KEY (ALT) #
-#######################
+##########################
 
 set $MOD Mod1
 
@@ -213,7 +213,7 @@ exec --no-startup-id i3-nagbar -t warning -m "Setting up your computer, please w
 
 exec --no-startup-id $TERMINAL -T 'System Resource Monitor' -e bash -c 'htop; bash'
 
-exec --no-startup-id $TERMINAL -T 'Code' -e bash -c 'sleep 2; vim'
+exec --no-startup-id $TERMINAL -T 'Code' -e bash -c 'sleep 2; vim; bash'
 
 exec --no-startup-id $TERMINAL -T 'Crashpad' -e bash -c 'sleep 2; echo ""; neofetch; bash'
 exec --no-startup-id bash -c "sleep 7; i3-msg 'restart'; i3-nagbar -t warning -m 'Welcome back, $USERNAME!'"

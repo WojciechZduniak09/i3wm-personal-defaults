@@ -1,6 +1,6 @@
 # i3wm-defaults, a set of files for Debian systems which use the i3 window manager.
 #
-# Copyright (C) 2024 Wojciech Zduniak <githubinquiries.ladder140@passinbox.com>
+# Copyright (C) 2024, 2025 Wojciech Zduniak <githubinquiries.ladder140@passinbox.com>
 #
 # This file is part of i3wm-defaults
 #
