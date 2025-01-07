@@ -5,7 +5,8 @@ v1.5.0
 """"""""""
 
 (1) Added *tcpdump* and *wireshark* to installation.
-(2) Made bash start after vim exit.
+(2) Made bash start after *vim* exit.
+(3) Made notice after *install.sh* be about logging in again and not restarting.
 
 Older news information
 """"""""""""""""""""""""""""""""""
