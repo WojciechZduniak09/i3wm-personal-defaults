@@ -60,54 +60,6 @@ install_dev_dependencies() {
 		sudo apt install shellcheck vim git gcc g++ make valgrind gdb openssl -y 2> /dev/null
 		echo "100"
 	} | whiptail --title "Dependency installer" --gauge "Installing dev dependencies..." 10 26 0
-	
-	if ! whiptail --title "Git setup" --yesno "Set up Git?" 7 20; then
-		return
-	fi
-
-	{
-		echo "14"
-		
-		local GIT_SSH_PATH
-		GIT_SSH_PATH="$HOME/.ssh/git_global_ssh"
-		echo "28"
-		
-		local GIT_USERNAME
-		GIT_USERNAME=$(whiptail --title "Git setup" --inputbox "Insert your username for Git" --nocancel 8 50 3>&1 1>&2 2>&3)
-		if ! git config --global user.name "$GIT_USERNAME"; then
-			echo "git error"
-			exit 1
-		fi
-		echo "42"
-		
-		local GIT_EMAIL
-		GIT_EMAIL=$(whiptail --title "Git setup" --inputbox "Insert your email for Git" --nocancel 8 50 3>&1 1>&2 2>&3)
-		if ! git config --global user.email "$GIT_EMAIL"; then
-			echo "git error"
-			exit 1
-		fi
-		echo "56"
-		
-		local PASSPHRASE
-		PASSPHRASE=$(whiptail --title "Git setup" --passwordbox "Insert your passphrase for Git SSH" --nocancel 8 50 3>&1 1>&2 2>&3)
-		if ! ssh-keygen -t ed25519 -C "$GIT_EMAIL" -f "$GIT_SSH_PATH" -P "$PASSPHRASE" -q; then
-			echo "openssl error"
-			exit 1
-		fi
-		echo "70"
-		
-		if ! eval "$(ssh-agent -s)" | cut -d " " -f 3; then
-			echo "Start SSH agent and retry"
-			exit 1
-		fi
-		ssh-add "$GIT_SSH_PATH"
-		echo "80"
-		
-		whiptail --title "Git setup" --msgbox "In order for git to finish setting up, add this public key to github: $(cat "$GIT_SSH_PATH.pub")" 30 50
-		whiptail --title "Git setup" --msgbox "In order for git to finish setting up, set a repo's remote as git@github.com:$GIT_USERNAME/REPOSITORY.git" 30 50
-		whiptail --title "Git setup" --msgbox "Note that you may need to run \"ssh-add $GIT_SSH_PATH\" at startup of your system" 30 50
-		echo "100"
-} | whiptail --title "Git setup" --gauge "Setting up git SSH..." 10 26 0
 }
 
 
