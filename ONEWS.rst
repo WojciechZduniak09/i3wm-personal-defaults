@@ -65,6 +65,13 @@ v1.4
 
 (1) Replaced *vscode* (it's impossible to install automatically) with *VIM*.
 
+v1.5
+""""
+
+(1) Added *tcpdump* and *wireshark* to installation.
+(2) Made bash start after *vim* exit.
+(3) Made notice after *install.sh* be about logging in again and not restarting.
+
 Legal and copying statement
 """"""""""""""""""""""""""""""""""""""""""
 

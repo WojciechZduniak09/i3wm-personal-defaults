@@ -1,20 +1,18 @@
 i3wm-defaults development news
-~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-v1.5.0
-""""""""""
+v1.5.1
+""""""
 
-(1) Added *tcpdump* and *wireshark* to installation.
-(2) Made bash start after *vim* exit.
-(3) Made notice after *install.sh* be about logging in again and not restarting.
+(1) Removed git installation as it was way too buggy.
 
 Older news information
-""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""
 
 In order to find older, archived, news, please refer to *ONEWS.rst*.
 
 Legal and copying statement
-""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""
 
 i3wm-defaults, a set of files for Debian systems which use the i3 window manager.
 
