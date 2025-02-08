@@ -183,7 +183,7 @@ workspace $WS6 output VirtualBox Manager
 workspace $WS7 output libreoffice
 
 for_window [title="System Resource Monitor"] move to workspace $WS8
-for_window [title="Code"] move to workspace $WS4
+for_window [title="Development Window"] move to workspace $WS4
 for_window [title="Crashpad"] move to workspace $WS1, floating enable, resize set 700 520, move position center
 
 ###########
@@ -213,7 +213,7 @@ exec --no-startup-id i3-nagbar -t warning -m "Setting up your computer, please w
 
 exec --no-startup-id $TERMINAL -T 'System Resource Monitor' -e bash -c 'htop; bash'
 
-exec --no-startup-id $TERMINAL -T 'Code' -e bash -c 'sleep 2; vim; bash'
+exec --no-startup-id $TERMINAL -T 'Development Window' -e bash -c 'sleep 2; vim; bash'
 
 exec --no-startup-id $TERMINAL -T 'Crashpad' -e bash -c 'sleep 2; echo ""; neofetch; bash'
 exec --no-startup-id bash -c "sleep 7; i3-msg 'restart'; i3-nagbar -t warning -m 'Welcome back, $USERNAME!'"
