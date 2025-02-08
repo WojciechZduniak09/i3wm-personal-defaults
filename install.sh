@@ -118,7 +118,7 @@ install_reverse_engineering_packages() {
 			fi
 			echo "42"
 
-			if ! sudo dpkg -i jdk-23_linux-x64_bin.deb; then
+			if ! sudo dpkg --install jdk-23_linux-x64_bin.deb; then
 				echo "dpkg error"
 				exit 1
 			fi
