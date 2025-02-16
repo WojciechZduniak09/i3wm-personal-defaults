@@ -1,54 +1,47 @@
 #! /bin/bash
 
-# i3wm-defaults, a set of files for Debian systems which use the i3 window manager.
+# i3wm-personal-defaults, a set of files for Debian systems which use the i3 window manager.
 #
 # Copyright (C) 2024, 2025 Wojciech Zduniak <githubinquiries.ladder140@passinbox.com>
 #
-# This file is part of i3wm-defaults
+# This file is part of i3wm-personal-defaults
 #
-# i3wm-defaults is free software: you can redistribute it and/or modify
+# i3wm-personal-defaults is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
 #
-# i3wm-defaults is distributed in the hope that it will be useful,
+# i3wm-personal-defaults is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with i3wm-defaults. If not, see <https://www.gnu.org/licenses/>.
+# along with i3wm-personal-defaults. If not, see <https://www.gnu.org/licenses/>.
 
 cat <<EOF >&1
-i3wm-defaults, a set of files for Debian systems which use the i3 window manager.
+i3wm-personal-defaults, a set of files for Debian systems which use the i3 window manager.
 
 Copyright (C) 2024, 2025 Wojciech Zduniak <githubinquiries.ladder140@passinbox.com>
 
-This file is part of i3wm-defaults
+This file is part of i3wm-personal-defaults
 
-i3wm-defaults is free software: you can redistribute it and/or modify
+i3wm-personal-defaults is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
-i3wm-defaults is distributed in the hope that it will be useful,
+i3wm-personal-defaults is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with i3wm-defaults. If not, see <https://www.gnu.org/licenses/>.
+along with i3wm-personal-defaults. If not, see <https://www.gnu.org/licenses/>.
 EOF
 sleep 3
 
-sudo echo "Starting repack process..." # Done so that superuser requiuests don't show during the progress bar
-
-{
-	sudo apt update 2> /dev/null
-	echo "33"
-	sudo apt upgrade -y 2> /dev/null
-	echo "66"
-	sudo apt autoremove -y 2> /dev/null
-	echo "100"
-} | whiptail --title "Repack service" --gauge "Upgrading all packages..." 7 20 10
+sudo apt update 2> /dev/null
+sudo apt upgrade -y 2> /dev/null
+sudo apt autoremove -y 2> /dev/null
 
 echo "Done!"

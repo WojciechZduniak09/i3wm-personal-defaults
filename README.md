@@ -1,4 +1,4 @@
-# i3wm-defaults #
+# i3wm-personal-defaults #
 
 ## Index ##
 
@@ -9,28 +9,28 @@
 
 ## Legal and copying statement ##
 
-i3wm-defaults, a set of files for Debian systems which use the i3 window manager.
+i3wm-personal-defaults, a set of files for Debian systems which use the i3 window manager.
 
 Copyright (C) 2024, 2025 Wojciech Zduniak <githubinquiries.ladder140@passinbox.com>
 
-This file is part of i3wm-defaults
+This file is part of i3wm-personal-defaults
 
-i3wm-defaults is free software: you can redistribute it and/or modify
+i3wm-personal-defaults is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 
-i3wm-defaults is distributed in the hope that it will be useful,
+i3wm-personal-defaults is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with i3wm-defaults. If not, see <https://www.gnu.org/licenses/>.
+along with i3wm-personal-defaults. If not, see <https://www.gnu.org/licenses/>.
 
 ## What is this? ##
 
-*i3wm-defaults* is a set of configuration files and scripts that add
+*i3wm-personal-defaults* is a set of configuration files and scripts that add
 quality-of-life improvements to the i3 window manager on Debian
 Linux virtual machines. It's target audience is *supposed to be*
 developers and reverse engineers who want an **easy-to-configure**
@@ -38,7 +38,7 @@ and **maybe lightweight** Linux system.
 
 ## Installation ##
 
-There is only one way to install *i3wm-defaults*, and that is to
+There is only one way to install *i3wm-personal-defaults*, and that is to
 use it's handy *install.sh* script. If anything goes wrong, please
 feel free to contact a contributor (only me for now) for help or
 run the commands from the installation script manually.
@@ -48,7 +48,7 @@ errors.
 
 Feel free to change any of the configuration files beforehand
 
-Run these commands from a terminal in *i3wm-defaults*' root directory:
+Run these commands from a terminal in *i3wm-personal-defaults*' root directory:
 
 ```
     chmod 0744 install.sh

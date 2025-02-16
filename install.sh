@@ -1,42 +1,42 @@
 #! /bin/bash
 
-# i3wm-defaults, a set of files for Debian systems which use the i3 window manager.
+# i3wm-personal-defaults, a set of files for Debian systems which use the i3 window manager.
 #
 # Copyright (C) 2024, 2025 Wojciech Zduniak <githubinquiries.ladder140@passinbox.com>
 #
-# This file is part of i3wm-defaults
+# This file is part of i3wm-personal-defaults
 #
-# i3wm-defaults is free software: you can redistribute it and/or modify
+# i3wm-personal-defaults is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
 #
-# i3wm-defaults is distributed in the hope that it will be useful,
+# i3wm-personal-defaults is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with i3wm-defaults. If not, see <https://www.gnu.org/licenses/>.
+# along with i3wm-personal-defaults. If not, see <https://www.gnu.org/licenses/>.
 
 cat <<EOF >&1
-i3wm-defaults, a set of files for Debian systems which use the i3 window manager.
+i3wm-personal-defaults, a set of files for Debian systems which use the i3 window manager.
 
 Copyright (C) 2024, 2025 Wojciech Zduniak <githubinquiries.ladder140@passinbox.com>
 
-This file is part of i3wm-defaults
+This file is part of i3wm-personal-defaults
 
-i3wm-defaults is free software: you can redistribute it and/or modify
+i3wm-personal-defaults is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
-i3wm-defaults is distributed in the hope that it will be useful,
+i3wm-personal-defaults is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with i3wm-defaults. If not, see <https://www.gnu.org/licenses/>.
+along with i3wm-personal-defaults. If not, see <https://www.gnu.org/licenses/>.
 EOF
 
 read -r -p "Press enter to continue . . . "
@@ -125,15 +125,16 @@ install_reverse_engineering_packages() {
 			sudo rm -rf jdk-23_linux-x64_bin.deb
 			echo "56"
 		fi
-		if stat "$HOME"/Programs/ghidra_11.2.1_PUBLIC 2> /dev/null; then
+		if stat "$HOME"/Programs/ghidra_11.3_PUBLIC 2> /dev/null; then
 			echo 100
 			return
 		fi
 		sudo apt install unzip -y 2> /dev/null
-		rm -rf "$HOME"/Programs/ghidra_11.2.1_PUBLIC
+		rm -rf "$HOME"/Programs/ghidra_11.3_PUBLIC
+		rm -rf "$HOME"/Programs/ghidra_11.3_PUBLIC_20250205.zip
 		local GHIDRA_ZIP_PATH
-		GHIDRA_ZIP_PATH="$HOME/Programs/ghidra_11.2.1_PUBLIC_2024, 2025, 20251105.zip"
-		if ! wget -q https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_11.2.1_build/ghidra_11.2.1_PUBLIC_2024, 2025, 20251105.zip; then
+		GHIDRA_ZIP_PATH="$HOME/Programs/ghidra_11.3_PUBLIC_20250205.zip"
+		if ! wget -q https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_11.3_build/ghidra_11.3_PUBLIC_20250205.zip; then
 			echo "wget error"
 			exit 1
 		fi
@@ -196,7 +197,7 @@ install_systemd_units() {
 		sudo systemctl daemon-reload
 		sudo systemctl start autoUpdate.timer
 		sudo systemctl enable autoUpdate.timer
-		sudo systemctl restart autUpdate.timer
+		sudo systemctl restart autoUpdate.timer
 		echo "100"
 	} | whiptail --title "Dependency installer" --gauge "Installing systemd units..." 10 26 0
 }
@@ -214,11 +215,10 @@ install_repack_command() {
 install_bash_aliases() {
 	{
 		cp root/home/USER/.bash_aliases "$HOME"/.bash_aliases
-		echo "50"
-		#shellcheck source=/dev/null
-		source "$HOME/.bashrc"
 		echo "100"
 	} | whiptail --title "Dependency installer" --gauge "Installing .bash_aliases..." 10 26 0
+	#shellcheck source=/dev/null
+	source "$HOME"/.bashrc
 }
 
 
