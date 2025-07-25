@@ -36,7 +36,7 @@ Linux virtual machines. Its target audience is *supposed to be*
 developers and reverse engineers who want an **easy-to-configure** and efficient
 workspace.
 
-** !! NOTE THAT THIS IS FOR AMD64 SYSTEMS ONLY !!
+** !! NOTE THAT THIS IS FOR AMD64 SYSTEMS ONLY !! **
 
 ## Installation ##
 
@@ -72,7 +72,6 @@ Afterwards you should add the provided public SSH key to your git remote
 remote's documentation if you are unsure of what to do).
 
 Later, you should add this to any of the repositories you want to connect to GitHub:
-
     * If a remote has already been set earlier
         * ```git remote set-url REMOTE_NAME git@github:GITHUB_USERNAME/REPOSITORY_NAME.git```
     * If a remote has not yet been set
