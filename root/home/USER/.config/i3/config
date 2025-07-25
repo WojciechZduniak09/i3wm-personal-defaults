@@ -204,7 +204,7 @@ bar {
 ###########################
 
 exec_always --no-startup-id picom -f
-exec_always --no-startup-id feh --bg-scale /usr/share/wallpapers/homeworld/contents/images/1920x1080.svg
+exec_always --no-startup-id feh --bg-scale /usr/share/wallpapers/moonlight/contents/images/1920x1080.svg
 
 # This part is harder to develop than it looks, trust me
 

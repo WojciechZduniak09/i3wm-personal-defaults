@@ -49,9 +49,6 @@ while true; do
 	fi
 done
 
-INIT_DIR="$PWD"
-mkdir "$HOME"/Programs 2> /dev/null
-
 install_dev_dependencies() {
 	{
 		sudo apt update 2> /dev/null
@@ -90,62 +87,34 @@ install_i3_dependencies() {
 
 
 install_reverse_engineering_packages() {
+	sudo apt update
 	sudo apt install wireshark tcpdump -y 2> /dev/null
 	{
-		sudo apt update 2> /dev/null
-		sudo apt install ltrace strace -y 2> /dev/null
-		echo "14"
-		if java --version  2> /dev/null | grep -q -e "java 23" -e "java 22" -e "java 21"; then
-			echo "56"
-		else
-			# Java is required for Ghidra
-			if ! wget -q https://download.oracle.com/java/23/latest/jdk-23_linux-x64_bin.deb; then
-				echo "wget error!"
-				exit 1
-			fi
-			echo "28"
-
-			local JAVA_EXPECTED_SHA256_SUM
-			JAVA_EXPECTED_SHA256_SUM="5ca258136aef3c82c40c30515cbe850a51a690887e31ba81ecfa9f96f978bd80"
-			local JAVA_OBTAINED_SHA256_SUM
-			JAVA_OBTAINED_SHA256_SUM=$(sha256sum jdk-23_linux-x64_bin.deb | sed "s/ .*//g")
-			if ! sha256sum jdk-23_linux-x64_bin.deb; then
-				echo "sha256sum error"
-				exit 1
-			elif [ "$JAVA_EXPECTED_SHA256_SUM" != "$JAVA_OBTAINED_SHA256_SUM" ]; then
-				echo "checksums don't match"
-				exit 1
-			fi
-			echo "42"
-
-			if ! sudo dpkg --install jdk-23_linux-x64_bin.deb; then
-				echo "dpkg error"
-				exit 1
-			fi
-			sudo rm -rf jdk-23_linux-x64_bin.deb
-			echo "56"
-		fi
-		if stat "$HOME"/Programs/ghidra_11.3_PUBLIC 2> /dev/null; then
-			echo 100
-			return
-		fi
-		sudo apt install unzip -y 2> /dev/null
-		rm -rf "$HOME"/Programs/ghidra_11.3_PUBLIC
-		rm -rf "$HOME"/Programs/ghidra_11.3_PUBLIC_20250205.zip
-		local GHIDRA_ZIP_PATH
-		GHIDRA_ZIP_PATH="$HOME/Programs/ghidra_11.3_PUBLIC_20250205.zip"
-		if ! wget -q https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_11.3_build/ghidra_11.3_PUBLIC_20250205.zip; then
-			echo "wget error"
-			exit 1
-		fi
-		echo "70"
-
-		if ! unzip "$GHIDRA_ZIP_PATH"; then
-			echo "unzip failure"
-			exit 1
-		fi
-		rm -rf "$GHIDRA_ZIP_PATH"
-		echo "100"
+		sudo apt install ltrace strace jq curl wget radre2 qt6-svg-dev -y 2> /dev/null
+		local RADARE2_RELEASE_INFO
+		RADARE2_RELEASE_INFO=$(curl -s https://api.github.com/repos/radareorg/radare2/releases/latest)
+		
+		local RADARE2_DOWNLOAD_URL
+		RADARE2_DOWNLOAD_URL=$(echo "$RADARE2_RELEASE_INFO" | jq -r '.assets[] | select(.name | test("^(?!.*dev).*[a-zA-Z0-9]+_amd64\\.deb$")) | .browser_download_url')
+		
+		local IAITO_RELEASE_INFO
+		IAITO_RELEASE_INFO=$(curl -s https://api.github.com/repos/radareorg/iaito/releases/latest)
+		
+		local IAITO_DOWNLOAD_URL
+		IAITO_DOWNLOAD_URL=$(echo "$IAITO_RELEASE_INFO" | jq -r '.assets[] | select(.name | test(".*\\.deb$")) | .browser_download_url')
+		
+		wget -q -O radare2.deb "$RADARE2_DOWNLOAD_URL"
+		
+		wget -q -O iaito.deb "$IAITO_DOWNLOAD_URL"
+		
+		sudo dpkg -i radare2.deb > /dev/null 2>&1
+		
+		sudo dpkg -i iaito.deb > /dev/null 2>&1
+		
+		rm -rf radare2.deb
+		
+		rm -rf iaito.deb
+		
 	} | whiptail --title "Dependency installer" --gauge "Installing reverse engineering dependencies..." 10 26 0
 }
 
@@ -258,14 +227,12 @@ install_virtualbox() {
 
 
 if whiptail --title "Dependency installer" --yesno "Are you sure you want to install and set up all dependencies?" --yes-button "Install" --no-button "Abort" 9 26; then
-	cd "$HOME"/Programs || exit 1
 	mkdir "$HOME"/.config 2> /dev/null
 	mkdir "$HOME"/.config/i3 2> /dev/null
 	touch "$HOME"/.config/i3/config 2> /dev/null
 	install_firefox
 	install_virtualbox
 	install_reverse_engineering_packages
-	cd "$INIT_DIR" || exit 1
 	install_repack_command
 	install_systemd_units
 	install_dev_dependencies

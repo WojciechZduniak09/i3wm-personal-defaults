@@ -72,6 +72,14 @@ v1.5
 (2) Made bash start after *vim* exit.
 (3) Made notice after *install.sh* be about logging in again and not restarting.
 
+v1.5.1
+""""""
+
+(1) Removed git installation as it was way too buggy.
+(2) Fixed auto updater.
+(3) Renamed project to avoid copyright issues.
+(4) FIxed ghidra installation.
+
 Legal and copying statement
 """"""""""""""""""""""""""""""""""""""""""
 

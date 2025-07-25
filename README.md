@@ -32,9 +32,11 @@ along with i3wm-personal-defaults. If not, see <https://www.gnu.org/licenses/>.
 
 *i3wm-personal-defaults* is a set of configuration files and scripts that add
 quality-of-life improvements to the i3 window manager on Debian
-Linux virtual machines. It's target audience is *supposed to be*
-developers and reverse engineers who want an **easy-to-configure**
-and **maybe lightweight** Linux system.
+Linux virtual machines. Its target audience is *supposed to be*
+developers and reverse engineers who want an **easy-to-configure** and efficient
+workspace.
+
+** !! NOTE THAT THIS IS FOR AMD64 SYSTEMS ONLY !!
 
 ## Installation ##
 
@@ -51,7 +53,7 @@ Feel free to change any of the configuration files beforehand
 Run these commands from a terminal in *i3wm-personal-defaults*' root directory:
 
 ```
-    chmod 0744 install.sh
+    chmod 0744 install.sh (only required if you installed the zipfile)
     ./install.sh
 ```
 
@@ -60,7 +62,7 @@ Run these commands from a terminal in *i3wm-personal-defaults*' root directory:
 If you are using a system that has already got a desktop environment,
 just log out and select i3 as the session's window manager. If not, it should boot
 automatically. If it does not, then log into a TTY terminal, run *sudo xinit* and then
-*sudo i3*. Remember to **not install the configuation file**.
+*sudo i3*. Remember to **not install the configuration file**.
 
 
 **Git setup**
