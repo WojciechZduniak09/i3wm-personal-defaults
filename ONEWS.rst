@@ -80,6 +80,13 @@ v1.5.1
 (3) Renamed project to avoid copyright issues.
 (4) FIxed ghidra installation.
 
+v1.6
+""""
+
+1) Replaced Ghidra with Radare2 and Iaito.
+2) Changed wallpaper to a more lively default Debian one (moonlight).
+3) Improved README documentation.
+
 Legal and copying statement
 """"""""""""""""""""""""""""""""""""""""""
 

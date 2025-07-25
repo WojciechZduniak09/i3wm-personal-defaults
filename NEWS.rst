@@ -1,12 +1,10 @@
 i3wm-personal-defaults development news
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-v1.6
-""""
+v1.6.1
+""""""
 
-1) Replaced Ghidra with Radare2 and Iaito.
-2) Changed wallpaper to a more lively default Debian one (moonlight).
-3) Improved README documentation.
+1) Fixed invalid apt acommand in reverse engineering config.
 
 Older news information
 """"""""""""""""""""""

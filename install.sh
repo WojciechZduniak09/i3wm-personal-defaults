@@ -90,7 +90,7 @@ install_reverse_engineering_packages() {
 	sudo apt update
 	sudo apt install wireshark tcpdump -y 2> /dev/null
 	{
-		sudo apt install ltrace strace jq curl wget radre2 qt6-svg-dev -y 2> /dev/null
+		sudo apt install ltrace strace jq curl wget qt6-svg-dev -y 2> /dev/null
 		local RADARE2_RELEASE_INFO
 		RADARE2_RELEASE_INFO=$(curl -s https://api.github.com/repos/radareorg/radare2/releases/latest)
 		
